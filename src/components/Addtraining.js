@@ -1,7 +1,7 @@
 import React from 'react';
 import SkyLight from 'react-skylight';
 import RaisedButton from 'material-ui/RaisedButton';
-import moment from 'react-moment';
+import Moment from 'react-moment';
 
 class Addtraining extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Addtraining extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let newTraining = {activity: this.state.activity, duration: this.state.duration, date: moment(this.state.date, "YYYY-MM-DD HH:mm"), customer: this.state.customer};
+    let newTraining = {activity: this.state.activity, duration: this.state.duration, date: this.state.date + ":00.000+0000", customer: this.state.customer};
     console.log(newTraining);
     this.props.addTraining(newTraining);
     this.simpleDialog.hide();
